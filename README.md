@@ -13,7 +13,7 @@
 ### 文件介绍
 ```
 -- component：子组件目录
--- EchartPlugin：
+	`-- EchartPlugin：echarts插件组件
 ```
 
 
