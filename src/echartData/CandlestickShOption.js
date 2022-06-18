@@ -133,7 +133,7 @@ const CandlestickShOption = {
         }
     },
     legend: {
-        data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30']
+        data: ['MA1', 'MA5', 'MA10', 'MA20', 'MA30']
     },
     grid: {
         left: '10%',
@@ -171,7 +171,7 @@ const CandlestickShOption = {
     ],
     series: [
         {
-            name: '日K',
+            name: 'MA1',
             type: 'candlestick',
             data: data0.values,
             itemStyle: {
