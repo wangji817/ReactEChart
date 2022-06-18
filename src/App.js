@@ -1,6 +1,6 @@
 import './App.scss';
 
-import EchartPlugin from './component/EchartPlugin';
+import { EchartPlugin } from './component/';
 
 const App = (props) => {
 
