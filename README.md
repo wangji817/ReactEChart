@@ -13,8 +13,15 @@
 ### 文件介绍
 ```
 -- component：子组件目录
-	`-- EchartPlugin：echarts插件组件
+	-- EchartPlugin：echarts插件父组件
+-- echartData：echarts图表列表
+	-- CandlestickOption.js：上证指数
+	-- CandlestickShOption.js：上证指数
+	-- LegendOption.js：圆饼图
+	-- LineOption.js：折线图
+	-- index.js：所有组件列表
 ```
+**大家可根据需求，新增或修改**
 
 
 #### 目录
@@ -24,20 +31,20 @@
 |-- README.md
 |-- package.json
 |-- public
-|   |                               `-- favicon.ico
-|   |                               `-- index.html
-|   |                               `-- logo192.png
-|   |                               `-- logo512.png
-|   |                               `-- manifest.json
-|                                   `-- robots.txt
+|   |   `-- favicon.ico
+|   |   `-- index.html
+|   |   `-- logo192.png
+|   |   `-- logo512.png
+|   |   `-- manifest.json
+|       `-- robots.txt
 |-- src
-|   |                               `-- App.css
-|   |                               `-- App.js
-|   |                               `-- App.test.js
-|   |                               `-- component
-|   |                               `-- EchartPlugin
-|   |       |                       `-- index.js
-|   |                               `-- index.scss
+|   |   `-- App.css
+|   |   `-- App.js
+|   |   `-- App.test.js
+|   |   `-- component
+|   |       `-- EchartPlugin
+|   |          `-- index.js
+|   |          `-- index.scss
 |   |-- echartData
 |   |   |-- CandlestickOption.js
 |   |   |-- CandlestickShOption.js
