@@ -19,6 +19,8 @@
 	-- LegendOption.js：圆饼图
 	-- LineOption.js：折线图
 	-- index.js：所有组件列表
+-- online：node服务接口地址文件
+-- service.js：node服务
 ```
 **可根据需求，新增或修改**
 
@@ -28,22 +30,35 @@
 ```
 |-- LICENSE
 |-- README.md
+|-- file.md
+|-- online
+|                   `-- chartsService
+|                   `-- mast
+|           |       `-- getCandlestick.js
+|           |       `-- getCandlestickSh.js
+|           |       `-- getLegend.js
+|                   `-- getLine.js
+|-- package-lock.json
 |-- package.json
 |-- public
-|   |   `-- favicon.ico
-|   |   `-- index.html
-|   |   `-- logo192.png
-|   |   `-- logo512.png
-|   |   `-- manifest.json
-|       `-- robots.txt
+|   |-- favicon.ico
+|   |-- index.html
+|   |-- logo192.png
+|   |-- logo512.png
+|   |-- manifest.json
+|   `-- robots.txt
+|-- service.js
 |-- src
-|   |   `-- App.css
-|   |   `-- App.js
-|   |   `-- App.test.js
-|   |   `-- component
-|   |       `-- EchartPlugin
-|   |          `-- index.js
-|   |          `-- index.scss
+|   |-- App.js
+|   |-- App.scss
+|   |-- App.test.js
+|   |-- component
+|   |   |-- EchartPlugin
+|   |   |   |       `-- index.js
+|   |   |           `-- index.scss
+|   |   `-- index.js
+|   |-- eApi
+|   |   `-- index.js
 |   |-- echartData
 |   |   |-- CandlestickOption.js
 |   |   |-- CandlestickShOption.js
