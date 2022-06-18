@@ -5,8 +5,8 @@
 
 ### 项目介绍
 
-1. 以creacte-react-app脚手架为框体，单页面应用展现大数据。
-2. 当前支持模块吧包版本nodejs>=16、npm>=8、yarn>=1.2，推荐使用nvm管理nodejs，方便多个项目切换
+1. 以creacte-react-app脚手架为框体，单页面应用展现大数据，以echarts npm包插件实现多种图表数据展示，[https://echarts.apache.org/handbook/zh/basics/import](https://echarts.apache.org/handbook/zh/basics/import "Echarts飞机")。
+2. 当前支持模块包版本nodejs>=16、npm>=8、yarn>=1.2，推荐使用nvm管理nodejs，方便多个项目切换
 3. 推荐yarn安装项目，或使用cnpm install或npm install
 4. 启动命令npm start
 
