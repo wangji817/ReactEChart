@@ -124,7 +124,7 @@ const CandlestickShOption = {
     id: "CandlestickShOption",
     title: {
         text: '上证指数',
-        left: 0
+        left: 40
     },
     tooltip: {
         trigger: 'axis',
