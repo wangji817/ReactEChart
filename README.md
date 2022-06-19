@@ -8,8 +8,9 @@
 2. 技术栈：React、React-Hooks、Echarts、Axios、Nodejs、Express、 
 3. 当前支持模块包版本nodejs>=16、npm>=8、yarn>=1.2，推荐使用nvm管理nodejs，方便多个项目切换
 4. 推荐yarn安装项目，或使用cnpm install或npm install
-5. 启动命令npm start
-6. 地址访问：http://localhost:3000/
+5. 项目根目录启动命令：npm start
+6. 项目根目录node服务启动命令：node service.js
+7. 地址访问：http://localhost:3000/
 
 ### 效果预览
 ![](https://github.com/wangji817/gitImg/blob/master/re.png)
