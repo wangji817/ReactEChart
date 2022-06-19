@@ -25,6 +25,7 @@
 	-- LegendOption.js：圆饼图
 	-- LineOption.js：折线图
 	-- index.js：所有组件列表
+-- redux：状态管理
 -- online：node服务接口地址文件
 -- service.js：node服务
 ```
@@ -64,7 +65,12 @@
 |   |   |           `-- index.scss
 |   |   `-- index.js
 |   |-- eApi
-|   |   `-- index.js
+|   |   |-- getCandlestick.js
+|   |   |-- getCandlestickSh.js
+|   |   |-- getLegend.js
+|   |   |-- getLine.js
+|   |   |-- index.js
+|   |   `-- util.js
 |   |-- echartData
 |   |   |-- CandlestickOption.js
 |   |   |-- CandlestickShOption.js
@@ -74,6 +80,8 @@
 |   |-- index.css
 |   |-- index.js
 |   |-- logo.svg
+|   |-- redux
+|   |   `-- index.js
 |   |-- reportWebVitals.js
 |   `-- setupTests.js
 ```
