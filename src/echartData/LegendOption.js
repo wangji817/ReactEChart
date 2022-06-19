@@ -1,38 +1,32 @@
 import React, { useEffect } from "react";
-import * as echarts from 'echarts';
-import { Autil } from '../eApi';
+import { Store } from '../redux';
 
 let myChart;
-const timerNum = 1000 * 3;
 const LegendOption = (props) => {
+    const { dispatch, useStore, } = Store;
+    const legendOption = useStore(S => S.legendOption);/**取当前store的state值 */
+    const timerNum = useStore(S => S.timerNum);/**取当前store的state值 */
     useEffect(() => {
         const size = {
             width: (document.querySelector(".EchartPlugin").clientWidth / 2) - 8.5,
             height: ((document.documentElement.clientHeight - 60) / 2),
         };
-        myChart = echarts.init(document.getElementById("LegendOption"), 'dark', size);
-        window.onresize = () => {
-            const screenWidth = document.querySelector(".EchartPlugin").clientWidth / 2;
-            myChart.resize({ width: screenWidth, height: ((document.documentElement.clientHeight - 60) / 2) });
-        };
+        myChart = props.data.echarts.init(document.getElementById("LegendOption"), 'dark', size);
+        props.data.resize(myChart);
         getChartsData();
     }, []);
 
     let getTimer = null;
     const getChartsData = () => {
+        dispatch("asyncGetLegend", {});
         clearTimeout(getTimer);
-        Autil.post('/getLegend').then((data) => {
-            myChart.setOption(data.data);
-            getTimer = setTimeout(() => {
-                getChartsData();
-            }, timerNum);
-        }).catch((error) => {
-            console.warn(error.name + ',' + error.message);
-            getTimer = setTimeout(() => {
-                getChartsData();
-            }, timerNum);
-        });
+        getTimer = setTimeout(() => {
+            getChartsData();
+        }, timerNum.legendNum);
     }
+    useEffect(() => {
+        myChart.setOption(legendOption);
+    }, [legendOption]);
 
     return (
         <div className="LegendOption" >

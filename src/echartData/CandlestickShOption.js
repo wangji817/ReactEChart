@@ -1,38 +1,32 @@
 import React, { useEffect } from "react";
-import * as echarts from 'echarts';
-import { Autil } from '../eApi';
+import { Store } from '../redux';
 
 let myChart;
-const timerNum = 1000 * 5;
 const CandlestickShOption = (props) => {
+    const { dispatch, useStore, } = Store;
+    const candlestickShOption = useStore(S => S.candlestickShOption);/**取当前store的state值 */
+    const timerNum = useStore(S => S.timerNum);/**取当前store的state值 */
     useEffect(() => {
         const size = {
             width: (document.querySelector(".EchartPlugin").clientWidth / 2) - 8.5,
             height: ((document.documentElement.clientHeight - 60) / 2),
         };
-        myChart = echarts.init(document.getElementById("CandlestickShOption"), 'dark', size);
-        window.onresize = () => {
-            const screenWidth = document.querySelector(".EchartPlugin").clientWidth / 2;
-            myChart.resize({ width: screenWidth, height: ((document.documentElement.clientHeight - 60) / 2) });
-        };
+        myChart = props.data.echarts.init(document.getElementById("CandlestickShOption"), 'dark', size);
+        props.data.resize(myChart);
         getChartsData();
     }, []);
 
     let getTimer = null;
     const getChartsData = () => {
+        dispatch("asyncGetCandlestickSh", {});
         clearTimeout(getTimer);
-        Autil.post('/getCandlestickSh').then((data) => {            
-            myChart.setOption(data.data);
-            getTimer = setTimeout(() => {
-                getChartsData();
-            }, timerNum);
-        }).catch((error) => {
-            console.warn(error.name + ',' + error.message);
-            getTimer = setTimeout(() => {
-                getChartsData();
-            }, timerNum);
-        });
+        getTimer = setTimeout(() => {
+            getChartsData();
+        }, timerNum.candlestickShNum);
     }
+    useEffect(() => {
+        myChart.setOption(candlestickShOption);
+    }, [candlestickShOption]);
 
     return (
         <div className="CandlestickShOption">
