@@ -4,8 +4,8 @@ import { Store } from '../redux';
 let myChart;
 const CandlestickShOption = (props) => {
     const { dispatch, useStore, } = Store;
-    const candlestickShOption = useStore(S => S.candlestickShOption);/**取当前store的state值 */
-    const timerNum = useStore(S => S.timerNum);/**取当前store的state值 */
+    const candlestickShOption = useStore(state => state.candlestickShOption);/**取当前store的state值 */
+    const timerNum = useStore(state => state.timerNum);/**取当前store的state值 */
     useEffect(() => {
         const size = {
             width: (document.querySelector(".EchartPlugin").clientWidth / 2) - 8.5,

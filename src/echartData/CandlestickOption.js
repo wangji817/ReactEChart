@@ -4,7 +4,7 @@ import { Store } from '../redux';
 let myChart;
 const CandlestickOption = (props) => {
   const { dispatch, useStore, } = Store;
-  const candlestickOption = useStore(S => S.candlestickOption);/**取当前store的state值 */
+  const candlestickOption = useStore(state => state.candlestickOption);/**取当前store的state值 */
   useEffect(() => {
     const size = {
       width: (document.querySelector(".EchartPlugin").clientWidth / 2) - 8.5,

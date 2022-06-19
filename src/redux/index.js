@@ -31,19 +31,19 @@ const Store = createStore({
     effects: {
         async asyncGetLine(data) {
             let new_data = await GetLine(data);
-            Store.dispatch(A => A.setLineOption, new_data);
+            Store.dispatch(D => D.setLineOption, new_data);
         },
         async asyncGetLegend(data) {
             let new_data = await GetLegend(data);
-            Store.dispatch(A => A.setLegendOption, new_data);
+            Store.dispatch(D => D.setLegendOption, new_data);
         },
         async asyncGetCandlestick(data) {
             let new_data = await GetCandlestick(data);
-            Store.dispatch(A => A.setCandlestickOption, new_data);
+            Store.dispatch(D => D.setCandlestickOption, new_data);
         },
         async asyncGetCandlestickSh(data) {
             let new_data = await GetCandlestickSh(data);
-            Store.dispatch(A => A.setCandlestickShOption, new_data);
+            Store.dispatch(D => D.setCandlestickShOption, new_data);
         },
     }
 })
