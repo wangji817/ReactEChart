@@ -5,7 +5,6 @@ let myChart;
 const CandlestickOption = (props) => {
   const { dispatch, useStore, } = Store;
   const candlestickOption = useStore(S => S.candlestickOption);/**取当前store的state值 */
-  const timerNum = useStore(S => S.timerNum);/**取当前store的state值 */
   useEffect(() => {
     const size = {
       width: (document.querySelector(".EchartPlugin").clientWidth / 2) - 8.5,
@@ -15,14 +14,10 @@ const CandlestickOption = (props) => {
     props.data.resize(myChart);
     getChartsData();
   }, []);
-
-  let getTimer = null;
+  
+  //固定k线，不用计时器循环
   const getChartsData = () => {
-    dispatch("asyncGetCandlestick", {});
-    clearTimeout(getTimer);
-    getTimer = setTimeout(() => {
-      getChartsData();
-    }, timerNum.candlestickNum);
+    dispatch("asyncGetCandlestick", {});        
   }
   useEffect(() => {
     myChart.setOption(candlestickOption);
